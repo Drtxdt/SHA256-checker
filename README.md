@@ -82,7 +82,7 @@ python main.py 你的资源包.zip xxxxxxxx(官方哈希)
 2. 一步到位，启动 GUI：
 
     ```bash
-    python gui_main.py
+    python sha256_gui.py
     ```
 
     > *PS：GUI 入口文件名以实际为准，反正只有一个 `.py` 文件，随便点它就对了！*
