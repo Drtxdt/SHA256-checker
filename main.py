@@ -24,8 +24,12 @@ def main():
     parser = argparse.ArgumentParser(
         description="校验文件的 SHA256 哈希值",
         epilog="使用示例：\n"
+               "- 如果是运行main.py: "
                "  main.py myfile.zip 9e9aed6c...\n"
-               "  main.py -f myfile.zip -H hash.txt",
+               "  main.py -f myfile.zip -H hash.txt"
+               "- 如果是运行已经打包好的:"
+               "  命令行Ver.exe myfile.zip 9e9aed6c...\n"
+               "  命令行Ver.exe -f myfile.zip -H hash.txt",
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
 
