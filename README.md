@@ -1,81 +1,117 @@
 # SHA256-checker
 
-## 简介 (Introduction)
+> “你以为你下载的是正版，结果却是‘正版’！”  
+> —— 本项目致力于让你下的文件再也不会“跑偏”！
 
-SHA256-checker 是一个用于校验文件 SHA256 哈希值的命令行工具。通过对比文件实际的 SHA256 哈希值与官方提供的哈希值，判断文件是否被篡改，保障文件的完整性与安全性。
+## 目录
 
-SHA256-checker is a command-line tool for verifying the SHA256 hash of files. By comparing the actual hash of a file with the official hash, you can check whether a file has been tampered with, ensuring file integrity and security.
-
----
-
-## 特性 (Features)
-
-- 支持直接输入文件路径和哈希值，也可读取存有哈希值的文件
-- 可选大小写敏感模式
-- 适用于大文件的分块校验，防止内存溢出
-- 命令行友好，易于集成到脚本和自动化流程
-
-- Support for direct file path and hash input, or reading the hash from a file
-- Optional case-sensitive mode
-- Chunked reading for large files to avoid memory overflow
-- Command-line friendly and easy to integrate into scripts and automation
+- [简介](#简介)
+- [快速开始](#快速开始)
+- [命令行版](#命令行版)
+- [GUI版](#gui版)
+- [贡献说明](#贡献说明)
+- [常见问题](#常见问题)
+- [许可证](#许可证)
 
 ---
 
-## 快速开始 (Quick Start)
+## 简介
 
-### 环境要求 (Requirements)
-- Python 3.x
+SHA256-checker 是一个用来计算和校验文件 SHA256 哈希值的小工具。  
+你担心网盘下的文件被“魔改”？还是怕朋友发你的是“快乐病毒”？别犹豫，丢进 SHA256-checker，真假立现！
 
-### 安装 (Installation)
+而且！本项目贴心地提供了两种版本，任你选择：
 
-无需安装，直接下载 `main.py` 文件即可使用。
+- 命令行版：喜欢敲代码的极客福音。
+- GUI版：怕黑窗口的鼠标骑士也能轻松上手。
 
-No installation is required. Just download the `main.py` file.
+---
 
-### 使用方法 (Usage)
+## 快速开始
+
+### 1. 克隆仓库
 
 ```bash
-python main.py <file_path> <sha256_hash>
-python main.py -f <file_path> -H <hash_or_hashfile>
-python main.py -f 文件路径 -H 哈希值或哈希文件
+git clone https://github.com/Drtxdt/SHA256-checker.git
+cd SHA256-checker
 ```
 
-示例（Example）:
+### 2. 安装依赖
+
+你得有 Python 3.x，建议配好 pip。  
+全局依赖？不存在的，我们走本地依赖，谁用谁装：
 
 ```bash
-python main.py myfile.zip 9e9aed6c...
-python main.py -f myfile.zip -H hash.txt
+pip install -r requirements.txt
 ```
 
-参数说明 (Arguments):
-
-- `<file_path>`：要校验的文件路径 (The path to the file to check)
-- `<sha256_hash>`：官方提供的 SHA256 哈希值 (Official SHA256 hash value)
-- `-f, --file`：指定文件路径 (Specify file path)
-- `-H, --hash`：指定哈希值或存有哈希值的文件路径 (Specify the hash value or a file containing the hash)
-- `-c, --case-sensitive`：启用大小写敏感模式 (Enable case sensitive comparison)
 
 ---
 
-## 输出说明 (Output)
+## 命令行版
 
-- 匹配成功：显示✅哈希值匹配，文件为官方原版
-- 匹配失败：显示❌哈希值不匹配，文件可能已被篡改
+极客专属，想怎么跑怎么跑！
 
-- Match: Shows ✅ hashes match, file is original
-- Mismatch: Shows ❌ hashes do not match, file may have been tampered with
+```bash
+python main.py 文件路径
+```
+
+比如：
+
+```bash
+python main.py 你的资源包.zip
+```
+
+你会看到和你期待中的 hash 值，喜不喜欢全看你下载的文件正不正宗。
 
 ---
 
-## 许可证 (License)
+## GUI 版
 
-MIT License
+觉得命令行太冷酷？来点人性化的交互！
+
+1. 进入 GUI 文件夹：
+
+    ```bash
+    cd GUI
+    ```
+
+2. 一步到位，启动 GUI：
+
+    ```bash
+    python gui_main.py
+    ```
+
+    > *PS：GUI 入口文件名以实际为准，反正只有一个 `.py` 文件，随便点它就对了！*
+
+3. 按照界面提示操作，鼠标选文件，剩下交给 SHA256-checker。
 
 ---
 
-## 致谢 (Acknowledgement)
+## 贡献说明
 
-如有建议或问题，欢迎提交 issues 或 pull requests。
+- 提了 PR 记得自测一下哦，不然作者会变身“魔鬼测试员”找你喝茶。
+- 文档、Bug、功能建议，欢迎 issue 区里“骚扰”！
 
-For suggestions or questions, feel free to submit issues or pull requests.
+---
+
+## 常见问题
+
+**Q：为啥我跑不起来？**  
+A：检查 Python 版本和依赖都装了没。还不行？提 issue！
+
+**Q：支持哪些系统？**  
+A：理论上只要能跑 Python 3 的地方都行，Windows、Linux、Mac，通吃。
+
+**Q：可以校验 MD5/其它算法吗？**  
+A：目前只专注 SHA256，专一是美德。但你要是想扩展，欢迎提 PR！
+
+---
+
+## 许可证
+
+MIT License —— 放飞自我，随便用随便造，记得带个署名。
+
+---
+
+> “下次下文件，别再赌人品了，赌一赌SHA256-checker，稳赚不赔！”
