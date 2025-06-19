@@ -39,7 +39,7 @@ cd SHA256-checker
 ### 2. 安装依赖
 
 你得有 Python 3.x，建议配好 pip。  
-全局依赖？不存在的，我们走本地依赖，谁用谁装：
+目前我们没有除了Python官方之外的依赖，如果将来有了，请运行以下命令一键安装：
 
 ```bash
 pip install -r requirements.txt
@@ -53,13 +53,13 @@ pip install -r requirements.txt
 极客专属，想怎么跑怎么跑！
 
 ```bash
-python main.py 文件路径
+python main.py 文件路径 官方的SHA256
 ```
 
 比如：
 
 ```bash
-python main.py 你的资源包.zip
+python main.py 你的资源包.zip xxxxxxxx(官方哈希)
 ```
 
 你会看到和你期待中的 hash 值，喜不喜欢全看你下载的文件正不正宗。
